@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 Placement Prediction Result</h1>
+
+    {% if "NOT" in result %}
+    <h2 style="color:red;">❌ {{ result }}</h2>
+    {% else %}
+    <h2 style="color:lime;">✅ {{ result }}</h2>
+    {% endif %}
+<hr>
+
+<h3>📋 Student Details</h3>
+
+<table>
+    <tr>
+        <td><b>CGPA</b></td>
+        <td>{{ cgpa }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Aptitude</b></td>
+        <td>{{ aptitude }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Coding</b></td>
+        <td>{{ coding }}</td>
+    </tr>
+
+    <tr>
+        <td><b>DSA</b></td>
+        <td>{{ dsa }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Communication</b></td>
+        <td>{{ communication }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Internships</b></td>
+        <td>{{ internship }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Projects</b></td>
+        <td>{{ projects }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Certifications</b></td>
+        <td>{{ certifications }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Hackathons</b></td>
+        <td>{{ hackathons }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Resume Score</b></td>
+        <td>{{ resume }}</td>
+    </tr>
+
+    <tr>
+        <td><b>Mock Interview</b></td>
+        <td>{{ mock }}</td>
+    </tr>
+
+</table>
+<hr>
+
+<h3>📊 Prediction Summary</h3>
+
+{% if "NOT" in result %}
+
+<p>
+Your current profile needs improvement before placement.
+Focus on coding, aptitude, projects, and communication skills.
+</p>
+
+{% else %}
+
+<p>
+Congratulations! 🎉
+Your profile is strong and you have a good chance of getting placed.
+Keep improving your technical and communication skills.
+</p>
+
+{% endif %}
+
+<br>
+
+    {% if "NOT" in result %}
+
+    <p>
+        📚 Suggestions:
+    </p>
+
+    <ul>
+        <li>Improve Coding Skills</li>
+        <li>Practice Aptitude Daily</li>
+        <li>Complete More Projects</li>
+        <li>Improve Communication Skills</li>
+    </ul>
+
+    {% else %}
+
+    <p>
+        🎉 Congratulations! Your profile indicates a strong chance of placement.
+        Keep improving your skills and continue practising for interviews.
+    </p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">⬅ Predict Another Student</a>
+
+</div>
+
+</body>
+</html>

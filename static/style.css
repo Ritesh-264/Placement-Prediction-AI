@@ -1,0 +1,305 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#6a11cb);
+    min-height:100vh;
+    color:white;
+}
+
+
+/* Navigation */
+nav{
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+}
+
+nav h2{
+    color:white;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+}
+
+nav ul li a:hover{
+    color:#00c853;
+}
+
+
+/* Dashboard */
+.dashboard{
+    display:flex;
+    justify-content:center;
+    margin:30px;
+}
+
+.card{
+    width:450px;
+    padding:20px;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+/* Prediction Container */
+.container{
+    width:450px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+
+.welcome{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+    font-size:16px;
+}
+
+
+label{
+    color:white;
+    font-size:15px;
+}
+
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    background:#00c853;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+
+button:hover{
+    background:#009624;
+    transform:scale(1.03);
+}
+
+
+::placeholder{
+    color:#555;
+}
+
+
+/* About Section */
+.about,
+.contact{
+    width:80%;
+    margin:30px auto;
+    padding:25px;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+}
+
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(0,0,0,0.2);
+    color:white;
+}
+
+
+/* Mobile Responsive */
+@media(max-width:500px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+
+    .container,
+    .card{
+        width:90%;
+    }
+
+
+    h1{
+        font-size:24px;
+    }
+    .result-box{
+    margin-top:20px;
+    padding:20px;
+    background:white;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.result-box h2{
+    color:#4a00e0;
+    font-size:24px;
+}
+.reset-btn{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    background:#f44336;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.reset-btn:hover{
+    background:#d32f2f;
+}
+.charts{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px auto;
+}
+
+.chart-box{
+    width:450px;
+    height:350px;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.chart-box canvas{
+    width:100% !important;
+    height:100% !important;
+}
+/* Hero Section */
+
+.hero{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto 40px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:48px;
+    color:white;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    color:#e8e8e8;
+    font-size:18px;
+    line-height:30px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#00c853;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    background:#009624;
+    transform:translateY(-3px);
+}
+
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:450px;
+}
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:36px;
+}
+
+.hero-image img{
+    max-width:320px;
+}
+
+}
+}
+
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <h2>🎓 Smart Placement Portal</h2>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Developer</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>🎓 AI Placement Prediction System</h1>
+
+        <p>
+            Predict placement opportunities using Machine Learning.
+            Analyze academic performance, coding skills, aptitude,
+            communication and internships to get instant results.
+        </p>
+
+        <a href="#prediction" class="hero-btn">Predict Now</a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="{{ url_for('static', filename='images/student.png') }}" alt="Student">
+
+    </div>
+
+</section>
+
+<!-- Dashboard -->
+<div class="dashboard">
+
+    <div class="card">
+        <h3>👨‍🎓 Students</h3>
+        <h2>{{ total }}</h2>
+    </div>
+
+    <div class="card">
+        <h3>✅ Placed</h3>
+        <h2>{{ placed }}</h2>
+    </div>
+
+    <div class="card">
+        <h3>❌ Not Placed</h3>
+        <h2>{{ notplaced }}</h2>
+    </div>
+
+    <div class="card">
+        <h3>🤖 Model</h3>
+        <h2>Decision Tree</h2>
+    </div>
+
+</div>
+
+<div class="charts">
+
+    <div class="chart-box">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+        <canvas id="barChart"></canvas>
+    </div>
+
+</div>
+
+<!-- Prediction Form -->
+<div class="container" id="prediction">
+
+    <h1>🎓 Placement Prediction System</h1>
+
+    <p class="welcome">
+        Predict your placement opportunity using Machine Learning.
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="0.1" name="cgpa" placeholder="CGPA" required>
+
+        <input type="number" name="aptitude" placeholder="Aptitude Score" required>
+
+        <input type="number" name="coding" placeholder="Coding Score" required>
+
+        <input type="number" name="dsa" placeholder="DSA Score" required>
+
+        <select name="communication" required>
+            <option value="">Communication</option>
+            <option value="0">Poor</option>
+            <option value="1">Average</option>
+            <option value="2">Good</option>
+            <option value="3">Excellent</option>
+        </select>
+
+        <input type="number" name="internship" placeholder="Internships" required>
+
+        <input type="number" name="projects" placeholder="Projects" required>
+
+        <input type="number" name="certifications" placeholder="Certifications" required>
+
+        <input type="number" name="hackathons" placeholder="Hackathons" required>
+
+        <input type="number" name="resume" placeholder="Resume Score" required>
+
+        <input type="number" name="mock" placeholder="Mock Interview Score" required>
+
+        <button type="submit">Predict Placement</button>
+
+    </form>
+    {% if result %}
+
+<div class="result-box">
+
+    <h2>{{ result }}</h2>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<!-- About -->
+<section id="about" class="about">
+
+    <h2>📘 About This Project</h2>
+
+    <p>
+        This Smart Placement Prediction System predicts whether a student is likely to be placed based on academic performance, technical skills, internships, projects, certifications, communication skills, resume score and mock interview performance using a Decision Tree Machine Learning model.
+    </p>
+
+</section>
+
+<!-- Developer -->
+<section id="contact" class="contact">
+
+    <h2>👨‍💻 Developer</h2>
+
+    <p><strong>RITESH</strong></p>
+
+    <p>Artificial Intelligence & Machine Learning</p>
+
+    <p>BE Final Year Student</p>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    © 2026 Smart Placement Prediction System | Developed by RITESH
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='chart.js') }}"></script>
+</body>
+</html>
